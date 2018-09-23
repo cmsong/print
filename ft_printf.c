@@ -126,7 +126,10 @@ int		handleBase(va_list ap, char spec)
 	else
 	{
 		ul = (unsigned long)va_arg(ap, void *);
-		str = convertBase(ul, 16);
+		if (ul)
+			str = convertBase(ul, 16);
+		else 
+			str = "0";
 		ft_putchar('0');
 		ft_putchar('x');
 		return (ft_putstr(str) + 2);
