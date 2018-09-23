@@ -151,6 +151,8 @@ int		ft_printf(const char *s, ...)
 			count += handleDec(ap, *s);
 		else if (*s && (*s == 'o' || *s == 'x' || *s == 'p'))
 			count += handleBase(ap, *s);
+		else if (*s && (*s == '%'))
+			count += ft_putstr("%");
 		else
 			break ;
 		s++;
